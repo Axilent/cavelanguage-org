@@ -1,0 +1,250 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>CAVE Symbol Reference</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<a class="navbar-brand" href="/">CAVE language</a>
+		<a href="rfc.html" class="navbar-text navbar-link">Request For Comments</a>
+		<a href="symbol-ref.html" class="navbar-text navbar-link">Symbol Reference</a>
+		<a href="http://cavelanguage.tumblr.com/" class="navbar-text navbar-link">Blog</a>
+	</nav>
+	<div class="container">
+		<h2>CAVE Symbol Reference</h2>
+		<h3>Version 0.8.1</h3>
+		<p>This is a reference document for the symbols used in the Conversational Architecture Visual Expression (CAVE) language.</p>
+	</div>
+	<div class="container">
+		<h3>Data Layer</h3>
+		<p>
+			The data layer of CAVE is concerned with the origins of raw data which will subsequently be used to create context for applications.
+		</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/device.png"></td>
+				<td>
+					<h4>Device</h4>
+					<p>A device represents a physical device through which the user interacts with the application.  Examples are smart phones, tablets, wearable computing devices etc.  A device will potentially have to significant attributes: its associated Sensors which collect data, and one or more User Interfaces that the application can employ to communicate with the user.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/device-federation.png"></td>
+				<td>
+					<h4>Device Federation</h4>
+					<p>
+					Device Federation refers to two or more devices used simultaneously.  Devices are significant for to factors: their sensors and their user interfaces.  In a Federation, devices are essentially considered to be one composite device with the sum of their capabilities.  A common current example of a Device Federation is a smart watch paired via bluetooth with a smart phone.	
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/device-migration.png"></td>
+				<td>
+					<h4>Device Migration</h4>
+					<p>
+						The transfer of control from one device to another.  Device Migrations can trigger Inferences that modify a user's Environment context.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/sensor.png"></td>
+				<td>
+					<h4>Sensor</h4>
+					<p>A sensor observes the physical world, makes observations and creates Data that can be used by the application.  A sensor generally belongs to a Device. Examples of Sensors include GPS locators, accelerometers, proximity sensors, cameras etc.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/data-source.png"></td>
+				<td>
+					<h4>Data Source</h4>
+					<p>A data source has collected relevant Data in an external system and is making that data available to the application. Examples of Data Sources are Facebook, LinkedIn, Google etc.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/data.png"></td>
+				<td>
+					<h4>Data</h4>
+					<p>Data is relevant but potentially raw information for the application.  Examples of data are the user’s location, current motion, friends etc., or non-user associated data such as the weather, stock market etc.  All Data will generally either be associated with a Sensor, or with a Data Source.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/user-input.png"></td>
+				<td>
+					<h4>User Input</h4>
+					<p>User Input is explicit direction from a user, entered through a user interface of some sort associated with a device. It is distiguished from data gathered from sensors or data sources which may be used for inferences, in that User Input uniquely implies the express intent of the user.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<h3>Context Layer</h3>
+		<p>Context is derived from data.  Unlike raw data, context is inherently meaningful, either in that it expresses the intent or circumstances of the user, or that it represents a meaningful state in the overall application environment.</p>
+		<p>User Context consists of four elements: Persona, Affinity, Goal and Environment (PAGE).</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/persona.png"></td>
+				<td>
+					<h4>Persona</h4>
+					<p>A persona is a long-lived behavioral segment that is associated with a user, representing an aspect of their behavior.  Personas, once associated, do not change over time.  Examples of personas are <em>Value Shopper</em>, <em>Deep Reader</em>, and <em>Social Sharer</em>.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/affinity.png"></td>
+				<td>
+					<h4>Affinity</h4>
+					<p>Affinity represents content and metadata that is preferred by the user.  In other words, affinity is what the user likes.  Generally affinity doesn’t change over time, however fresh affinity could be said to be more important than old affinity.  Examples of affinity are favorited movies, products added to a wishlist, or articles that are shared on social networks.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/goal.png"></td>
+				<td>
+					<h4>Goal</h4>
+					<p>A goal is a user-driven objective for the current session of the app.  Unlike Personas and Affinity, goals can change at a moment’s notice, and rarely last beyond a single session.  (However they can span multiple sessions or devices.)  Examples of goals might be get customer service, purchase gift or just find entertaining videos. A goal can be modified by sentiment, an indication of the positive or negative attitude the user has in the pursuit of that goal.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/environment.png"></td>
+				<td>
+					<h4>Environment</h4>
+					<p>The environment is the circumstances under which the user’s interaction with the app occur.  Examples of Environment include the user’s location, technology, microlocation (where are they in the store), work vs home, browser technology etc. Environments are specific to the user in question.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/sentiment.png"></td>
+				<td>
+					<h4>Sentiment</h4>
+					<p>The inferred emotional state of the user at the time of the interaction.  Sentiment is generally categorized as either <em>positive</em> or <em>negative</em>, although more specific emotions can be used if the technical capability to assess them is available.  Sentiment is always used in an explicitly labeled format (positive, negative, angry, sad, etc.), however it may be either created in a labeled format in an inference, or simply be captured as a placeholder from processed data.</p>
+				</td>
+			</tr>
+		</table>
+		<p>In addition to the user context elements (PAGES) there is State, a representation of general conditions that are not specific to the user.</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/state.png"></td>
+				<td>
+					<h4>State</h4>
+					<p>A <em>State</em> is a general condition that is of some significane to the application, but not specific to the user.  For example, a State might be <em>it is raining in New York City</em>, or <em>it is December 5th</em>.</p>
+				</td>
+			</tr>
+		</table>
+		<h4>Inferences</h4>
+		<p>Raw data is translated into context through the use of <strong>Inferences</strong>.</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/inference.png"></td>
+				<td>
+					<h4>Inference</h4>
+					<p>An inference sets a conditional, placed in the left side of the box, and from it infers a context element (Persona, Goal, Affinity, Environment).</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/conditional.png"></td>
+				<td>
+					<h4>Conditional</h4>
+					<p>A conditional is a requirement that must be met by incoming data in order for the inference to fire.  Conditionals may be any test that can be performed on incoming data.</p>
+				</td>
+			</tr>
+		</table>
+		<p>Some Inference examples:</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/jogger-persona-inference.png"></td>
+				<td>
+					<p>An inference showing the association of a user with a Jogger Persona.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/proximate-environment-inference.png"></td>
+				<td>
+					<p>An inference showing the conditions under with the app considers the user Proximate to the Hardware Store, an aspect of the user’s Environment context.</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<h3>Modal Response Layer</h3>
+		<p>A contextual application will have a modal response to user context and framing.  For each switch, the application will evaluate a prioritized list of user context and framing, firing the appropriate mode when it gets a match.</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/switch.png"></td>
+				<td>
+					<h4>Switch</h4>
+					<p>
+					A Switch is a part of an application that changes modes in response to context.  A contextual application has at least one switch, and may have more.  Switches operate independently from each other. A Switch might represent the behavior of a single user interface, such as the heads-up display in Google Glass, or it might represent a condition that is shared across many devices.	
+					</p>
+					<p>
+					Each Switch has a stack of contexts that it attempts to match to individual users, and modal responses for each matching context. A Switch always has a default modal response that fires if the user doesn't match any of the contexts.	
+					</p>
+					<p>
+					Switches are a good way to break larger applications up into smaller, modularized components.	
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/content.png"></td>
+				<td>
+					<h4>Content</h4>
+					<p>Content is part of a modal response from a switch representing data meant for presentation to and consumption by the user.  It may represent user interface copy, articles, video, audio or any other user consumable data, to be read, viewed etc.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/content-policy.png"></td>
+				<td>
+					<h4>Content Policy</h4>
+					<p>
+					A Content Policy is part of a modal response.  Whereas a Content element refers to specific content, a Content Policy is a description of how content should be selected within the mode, and does not refer to specific content.  Examples of Content Policy might be related content to a main article, or personalized product recommendations.	
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/functionality.png"></td>
+				<td>
+					<h4>Functionality</h4>
+					<p>
+					Functionality refers to features and capabilities included in a modal response (beyond the display of content). Examples of Functionality include displaying the user’s current location on a map, counting down minutes until it starts to rain, or automatically sending a message to a colleague.	
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/rule.png"></td>
+				<td>
+					<h4>Rule</h4>
+					<p>
+					A Rule element is part of a modal response, and represents a business rule to be followed within the scope of a response.  Rules are sometimes better ways to express the behavior of the app than a complicated flow, and can be paired effectively with Functionality elements.  Examples of Rules are a warning is always issued when the battery falls below 25%, an alert is sent when there is more than a 5 degree fluctuation in the temperature, and free shipping is offered on purchases over $20.	
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="images/symbols/style.png"></td>
+				<td>
+					<h4>Style</h4>
+					<p>
+					Style refers to the tone of the app’s interaction with the user.  Style is part of a modal response.  Specifying Style enables contextual apps to respond in a manner appropriate to the circumstances of the user’s interaction.  Example’s of Style are casual, brisk, formal and emergency!	
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p>A special kind of modal response is a <em>switch migration</em>, in which case application control for the user is passed from one switch to another.</p>
+		<table class="table">
+			<tr>
+				<td><img src="images/symbols/switch-migration.png"></td>
+				<td>
+					<h4>Switch Migration</h4>
+					<p>
+					The transfer of control from one switch to another.  Upon transfer the new switch’s context stack will immediately take effect.	
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

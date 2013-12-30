@@ -1,0 +1,410 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>CAVE Symbol Reference</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<a class="navbar-brand" href="/">CAVE language</a>
+		<a href="rfc.html" class="navbar-text navbar-link">Request For Comments</a>
+		<a href="symbol-ref.html" class="navbar-text navbar-link">Symbol Reference</a>
+		<a href="http://cavelanguage.tumblr.com/" class="navbar-text navbar-link">Blog</a>
+	</nav>
+	<div class="container">
+		<h1>CAVE</h1>
+
+		<h3>Conversational Architecture Visual Expression language</h3>
+
+		<h2>Request For Comments</h2>
+
+		<h3>v. 0.8.1</h3>
+		<h4>by Loren Davie and Jared Caponi</h4>
+		<hr/>
+
+		<h1>Introduction</h1>
+
+		<p>We are witnessing the rise of <strong>contextual applications</strong>. In the past, applications, whether they were websites, desktop applications or otherwise, operated without regard to the circumstances of their users.  Today, however, we are seeing a new generation of applications that react and respond dynamically to the context and circumstances of their users.</p>
+
+		<p>Contextual applications have the potential to interact with users in a more effective, efficient and authentic manner than ever before.  Additionally, contextual applications can leverage a wider variety of user interfaces (such as voice and gestural control).</p>
+
+		<p>This trend towards contextual applications is driven by five forces identified by Robert Scoble and Shel Israel in their <a href="http://www.amazon.com/Age-Context-Mobile-Sensors-Privacy/dp/1492348430">2013 book <em>The Age of Context</em></a>.</p>
+
+		<h2>Five Forces</h2>
+
+		<h4>Mobile Devices</h4>
+
+		<p>The proliferation of mobile devices has embedded computing capabilities into a wide variety of real-world contexts.  Using mobile phones, tablet computers, smart watches, Google Glass, etc., we are now building applications meant to be used while shopping, jogging, driving and so on.  This is a far cry from the uniformity of application context historically, where an application designer could assume that the user was sitting at a desk in front of a computer.</p>
+
+		<h4>Social Media</h4>
+
+		<p>The widespread adoption of social media such as Facebook, Twitter, LinkedIn and so forth has created a massive graph of human interaction data, enabling introspection into various behaviors and affinities of individuals as they interact with their peers. This data can form the basis of insights about users, to which applications can strategically respond.</p>
+
+		<h4>Data</h4>
+
+		<p>The reduced cost of data collection and storage, combined with new techniques for analyzing data, have made automated insights into user circumstances, preferences and behavior more practical than ever before.  The availability of user data makes dynamic responses by applications possible.</p>
+
+		<h4>Sensors</h4>
+
+		<p>A significant force accompanying the proliferation of data and mobile devices is the ubiquity of sensors.  GPS, micro-location, motion sensors, biometric sensors and, of course, cameras, all power the opportunity for passive collection of vast amounts of contextual data (Where is the user?  Are they moving? Is their heart beating fast? e.g.)  These sensors are becoming increasingly inexpensive, and they are everywhere.</p>
+
+		<h4>Location</h4>
+
+		<p>Knowing a user's physical location is key to understanding their context.  Whether a user is at work, at home, in transit, or performing an errand, their location implies much about their context. We now have significant amounts of metadata associated with geographical locations, which can be used to make contextual inferences.</p>
+
+		<h2>The Problem With Contextual Applications</h2>
+
+		<p>A contextual application responds dynamically to user context.  While the business case and the technology exists for the building of contextual applications, what is lacking is a <strong>design language</strong> in which to articulate them. To describe dynamic response to user context there have been various attempts to draft existing design and specification formats, such as heavily annotated wireframes, UML state diagrams and flowcharts, but none of these are optimized for contextual application design.  The problem is exacerbated when trying to describe common modal functionality that can be expressed through multiple user interfaces, or when dealing with a purely contextual interface such as voice control, such as Siri or Google Now.</p>
+
+		<p>The lack of a language to articulate contextual applications creates a design bottleneck: the desire and capability to build such applications exists, but there is no way to describe them.</p>
+
+		<h2>The Conversational Metaphor</h2>
+
+		<p>The best way to approach an abstract application design problem is to use a <strong>foundational metaphor</strong> upon which a system of interaction can be built.  Some historical examples of foundational metaphors include the *desktop *metaphor in personal computing, and the web page. While there is nothing intrinsic in a computer operating system that requires the concept of a desktop, nor anything intrinsic in the networked exchange of files that requires the concept of a page, both metaphors are used to build an organizational model in the application designer's mind.</p>
+
+		<p>For contextual applications, the best foundational metaphor is the <strong>natural language conversation</strong>. A conversation conducted between two individuals is a perfect example of ongoing dynamic response to context.  A conversational participant gathers context concerning their counterpart based both on explicitly communicated information as well as inferences that they make based on their counterpart's actions and circumstances.  In response to this context, the participant dynamically alters their behavior in real time.</p>
+
+		<p>Describing how an application behaves as a participant in a two-way conversation is the best way to organize and specify the behavior of a contextual application.</p>
+
+		<hr />
+
+		<h1>CAVE: The Conversational Architecture Visual Expression language</h1>
+
+		<p>CAVE is a visual design language for expressing the behavior of contextual applications.  It uses the conversational metaphor to describe user context and application response.</p>
+
+		<blockquote>
+		  <p><strong>Example: Bike App</strong>
+		To provide a running example, CAVE will be used to describe an app for cyclists that warns them when rain is coming and guides them to shelter. It is envisioned as working on Google Glass-like smart glasses, in conjunction with the cyclist's cell phone.</p>
+		</blockquote>
+
+		<h2>Goals of CAVE</h2>
+
+		<p>CAVE is designed with the following goals in mind:</p>
+
+		<h4>Whiteboard / Napkin / Presentation Friendly</h4>
+
+		<p>CAVE should adapt well to different formats as needed.  It should look fine in highly polished documents or presentations in the boardroom, but at the same time be useful written on the back of a napkin. It should be practical to write CAVE drawings on a whiteboard while discussing application design. In other words, precise usage of CAVE is okay, but sloppy usage of CAVE is also okay.</p>
+
+		<h4>Methodology Neutral</h4>
+
+		<p>CAVE is a language, not a methodology.  CAVE isn't prescribing best practices for contextual application development, it's just providing a means of expressing them.  Additionally, nothing in CAVE should prevent you from using your favorite methodology, nor should it interfere with other existing practices such as agile development or user-centered design.</p>
+
+		<h4>Scales Up, Scales Down</h4>
+
+		<p>CAVE should be suitable for sparing use, to describe a simple idea with minimal effort.  At the same time you should also be able to use CAVE extensively, to describe large, complex systems, without encountering limitations in the language.</p>
+
+		<h4>Useful Across Disciplines</h4>
+
+		<p>Contextual applications are built by teams of people with different skill sets.  CAVE should serve everyone on the team, allowing each member to understand the application in the way they specifically need in order to do their job.  CAVE drawings should connect the team, effectively acting as a canonical representation of the application.</p>
+
+		<h2>How CAVE Is Organized</h2>
+
+		<p><img src="images/CAVE-Layers.png" alt="CAVE Layers"></p>
+
+		<p>CAVE is organized into three layers, each describing an aspect of a contextual application: <strong>data</strong>, <strong>context</strong> and <strong>modal response</strong>. Each layer builds on the previous one.</p>
+
+		<h4>Data Layer</h4>
+
+		<p>A contextual app has to deal with the collection, acquisition and processing of data.  This is described in the Data Layer.  It shows data and its origins, whether they are sensors, external data sources or user input.  A CAVE data drawing should always answer the question, "Where does this data come from?"</p>
+
+		<h4>Context Layer</h4>
+
+		<p>From raw data, meaningful context can be inferred.  The context layer builds upon the data identified in the data layer, and, through inferences, creates insights into user context.  For example, a CAVE context drawing might show how an inference maps user behavioral data to an insight about a user's affinity.</p>
+
+		<h4>Modal Response Layer</h4>
+
+		<p>A contextual application will observe user context and respond in a specific way.  CAVE modal response drawings show a prioritized stack of target contexts is examined, each with a corresponding modal response.</p>
+
+		<hr />
+
+		<h1>Data Layer: Managing Data And Its Origins</h1>
+
+		<p>Context starts with data, and one of the central issues of developing contextual applications is the identification, sourcing and processing of data.  The Data Layer of CAVE facilitates the planning of data usage by the application.</p>
+
+		<h3>Data</h3>
+
+		<p><img src="images/symbols/data.png" alt="Data Symbol" title="" /> <strong>Data</strong> doesn't spring out of nowhere.  It needs to have an origin specified for it, such as a <strong>Sensor</strong>. Sensors are generally associated with <strong>Devices</strong>.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Device-to-Data.png" alt="Device to Data" title="" /> </p>
+
+		<p><em>Tracing the origin of data from device, through sensor, to data</em></p>
+		</blockquote>
+
+		<p>Sometimes applications use more than one device in conjunction, pulling capabilities from both devices.  A common case is a wearable tech item working in conjunction with a smart phone, using Bluetooth. This is called a <strong>Device Federation</strong>.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Device-Federation.png" alt="Device Federation" title="" /></p>
+
+		<p><em>Two devices working together</em></p>
+		</blockquote>
+
+		<p>It's also possible that the application is using data that is provided by an external source, such as through the API of a social network.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Data-Source-to-Data.png" alt="Data Source to Data" title="" /></p>
+
+		<p><em>Data can also originate from external data sources, such as APIs</em></p>
+		</blockquote>
+
+		<p>Typically, a CAVE data layer drawing will show the association between data and its origins.  This allows application developers to know what will be required in terms of integrations, device capabilities and so on.</p>
+
+		<h3>Processed Data</h3>
+
+		<p>Sometimes data can be processed to create more refined data.  Typically the resulting data has additional information that has been extrapolated from the rawer input.  This is called <strong>Processed Data</strong>.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Processed-Data.png" alt="Data to Processed Data" title="" /></p>
+
+		<p><em>Processed Data can be extracted directly from Data</em></p>
+		</blockquote>
+
+		<p>Finally, there is a special type of data that is treated differently from all others: <strong>User Input</strong>.</p>
+
+		<h3>User Input</h3>
+
+		<p><img src="images/symbols/user-input.png" alt="User Input Symbol" title="" /> </p>
+
+		<p>User Input is explicit input created by the application user via a user interface.  Unlike any other data, user input can be accessed directly in the Modal Response layer, it does not have to be processed into context first.</p>
+		
+		<hr/>
+
+		<blockquote>
+		  <h2>Example: Data for the Bike App</h2>
+
+		<p><img src="images/examples/Bike-App-Data.png" alt="Bike App Data" title="" /></p>
+
+		<p>The bike app works as a federation between two devices, the user's smart glasses and his phone. This federation makes available a GPS Sensor, a Motion Sensor, and User Input methods to applications.</p>
+
+		<p>From the GPS Sensor, the bike app extracts the current location of the user and historical route data.  The bike app notes how long it takes to bike the distance of historical routes over time, creating average times per route as Processed Data.  From the Motion Sensor, the app can determine if the user is in motion.</p>
+
+		<p>The app also collects the locations of the user's home and work as explicit User Input.</p>
+
+		<p>Finally the app integrates with an external weather service API to pull local weather forecast and radar data, and with a social network API to get locations that are suitable rain shelters.</p>
+		</blockquote>
+
+		<hr />
+
+		<h1>Context Layer: Finding Meaning In Data</h1>
+
+		<p>Once data is collected it needs to be interpreted in such a way so that the application knows what the data means. CAVE refers to the product of this interpretation as <strong>Context</strong>.</p>
+
+		<h2>User Context Elements</h2>
+
+		<p>Context is comprised of several different kinds of elements, each of which mean slightly different things for an application.</p>
+
+		<h4>Persona</h4>
+
+		<p><img src="images/symbols/persona.png" alt="Persona" title="" /></p>
+
+		<p>A <strong>Persona</strong> represents an aspect of the user's personality, based on cues from her behavior.  A Persona has a specific label, and user traffic is sorted into a handful of personas, effectively serving as behavioral segments.</p>
+
+		<h4>Affinity</h4>
+
+		<p><img src="images/symbols/affinity.png" alt="Affinity" title="" /></p>
+
+		<p><strong>Affinity</strong> represents the preferences of the user, either for specific content, products or other items, or for abstract metadata.  Affinity is always as a variable placeholder: instead of meaning a specific, labeled affinity, it stands for whatever the affinity of the user happens to be.</p>
+
+		<h4>Goal</h4>
+
+		<p><img src="images/symbols/goal.png" alt="Goal" title="" /></p>
+
+		<p>A <strong>Goal</strong> represents something the user is trying to accomplish.  It is used to represent immediate concrete goals, not something abstract or long-term.  As such, Goals are treated as a stack, with one primary Goal for a user at a time.  Only if the primary Goal is resolved will lower priority Goals be available.</p>
+
+		<h4>Environment</h4>
+
+		<p><img src="images/symbols/environment.png" alt="Environment" title="" /></p>
+
+		<p>A user's <strong>Environment</strong> is the circumstances that surround them while they interact with the application.  Environment is a fairly open concept: it may represent the user's location, any sensor data such as motion, biometrics, etc., and the technology the user employs to interact with the application (device, software, etc.).  Excluded from a user's Environment are global or widespread conditions that are not unique to the user.  See <strong>State</strong>, below, for those.</p>
+
+		<h4>Sentiment</h4>
+
+		<p><img src="images/symbols/sentiment.png" alt="Sentiment" title="" /></p>
+
+		<p><strong>Sentiment</strong> refers to the inferred emotional state of the user at the time of the interaction.  Sentiment is generally categorized as either <em>positive</em> or <em>negative</em>, although more specific emotions can be used if the technical capability to assess them is available.  At the modal response layer (see below) Sentiment is always used in an explicitly labeled format (positive, negative, angry, sad, etc.), however it may be either created in a labeled format in an inference, or simply be captured as a placeholder from processed data.</p>
+
+		<h2>State</h2>
+
+		<p><img src="images/symbols/state.png" alt="State" title="" /></p>
+
+		<p>A State is a global or widespread condition (for example, the weather) that is significant to the application, but not specific to the user (meaning that it is not part of the user's Environment).  Like User Context Elements, State can be created in the Context layer from raw data.</p>
+
+		<h2>Inferences</h2>
+
+		<p>An inference processes raw data and produces meaningful context.  It is represented by a set of square braces, with the input data associated.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Empty-Inference.png" alt="An Inference" title="" /></p>
+
+		<p><em>An inference is made from data</em></p>
+		</blockquote>
+
+		<p>For most inferences, there is a condition that must be met by the raw data in order for inference to fire and create the context.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Inference-With-Conditional.png" alt="Inference With Conditional" title="" /></p>
+
+		<p><em>An inference usually has a condition that must be met by the data</em></p>
+		</blockquote>
+
+		<p>In this example, the inference will only fire if the motion data indicates that the user is in motion.</p>
+
+		<p>On the right side of the inference is the consequence if it fires.  In this case, the inference will assign the label "In Motion" to the user's Environment (see the <em>Environment</em> context element, below) if the motion data indicates the user is in motion.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/In-Motion-Inference.png" alt="In Motion Inference" title="" /></p>
+
+		<p><em>If the data meets the condition, the context element on the right side of the inference is associated with the user</em></p>
+		</blockquote>
+
+		<h3>Device Migrations and Inferences</h3>
+
+		<p>A device migration is the act of a user changing from one device to another.  This action can be used as a triggering condition that modifies a user's Environment.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Device-Migration-Inference.png" alt="Device Migration Inference" title="" /></p>
+
+		<p><em>If the user migrates from their tablet to their phone, their Environment context is modified accordingly</em></p>
+	</blockquote>
+	
+	<hr/>
+	
+	<blockquote>
+
+		<h2>Example: Inferring Context for the Bike App</h2>
+
+		<p><img src="images/examples/Bike-App-Inferences.png" alt="Bike App Inferences" title="" /></p>
+
+		<p>The bike app contains six inferences:</p>
+
+		<ol>
+		<li>If the motion data indicates that the user is in motion, they are associated with the Riding Environment.</li>
+		<li>If the current location data and the historic route data indicate that the user's location is along a known route, they are associated with the En Route Environment.</li>
+		<li>In the event that the average time per route Processed Data, the current location data and the weather forecast / radar data indicate that it's likely that it will rain before the destination is reached, the current user will be associated with the Rain Imminent Environment.</li>
+		<li>If the current location data and the shelter locations data indicate that the user is approaching a rain shelter, the user will be associated with the Riding for Shelter Goal.</li>
+		<li>If the current location data and the location of home user input indicate that the user is approaching home, they will be associated with the Riding for Home Goal.</li>
+		<li>If the current location data and the location of work user input indicate that the user is approaching work, they will be associated with the Riding for Work Goal.</li>
+		</ol>
+		</blockquote>
+
+		<hr />
+
+		<h1>Modal Response Layer: Dynamic Reaction to Context</h1>
+
+		<p>The defining characteristic of contextual applications is that, when faced with specific user context, they can change the way they work.  In CAVE this dynamic behavior is defined in the Modal Response layer.</p>
+
+		<h2>Switches</h2>
+
+		<p>A <strong>Switch</strong> is a part of a contextual application that reacts to user context.  An application may have just one switch or many.  Multiple switches act independently of each other.</p>
+
+		<p>A Switch has a stack of Context rules, which are evaluated against the current user context in priority order.  For each Context rule, there is a corresponding modal response from the Switch.  At the bottom of the stack there is always a default response.</p>
+
+		<blockquote>
+		  <p><img src="images/examples/Example-Switch.png" alt="Example Switch" title="" /></p>
+
+		<p><em>A switch shows which contexts trigger which modal responses. Context rules go on the left, modal responses in the middle, user interfaces on the right</em></p>
+		</blockquote>
+
+		<h3>Context Rule</h3>
+
+		<p>A context rule consists of a number of context elements that the switch is seeking to match.  If all of the elements of a user's context match the rule, then it will fire and the Switch will respond in the way dictated in the corresponding modal response.  A Context Rule may contain specified Persona, Affinity, Goal, Environment and Sentiment elements.</p>
+
+		<p>In addition to user context a Context Rule may contain two other elements: a State (a required global condition) and explicit User Input.</p>
+
+		<p>If the user's context does not match the Context Rule, the Switch will continue to the next Context Rule in the stack, attempting to match it.</p>
+
+		<h3>Organizing An Application With Switches</h3>
+
+		<p>Even for applications for which, for a user, there is only one active Switch, it is often beneficial to subdivide a complicated application into multiple switches.  <strong>Switch Migrations</strong> (see below) can be used to pass control from one Switch to another for a user.</p>
+
+		<h2>Modal Inventory</h2>
+
+		<p>Associated with a Context Rule is the Switch's modal response, which consists of a Modal Inventory.  The inventory describes all the elements of the Modal Response to the specified context, with the goal of showing the product team what they need to do to implement that modal response.</p>
+
+		<p>A modal inventory may consist of any of the following element types:</p>
+
+		<h4>Content</h4>
+
+		<p><img src="images/symbols/content.png" alt="Content" title="" /></p>
+
+		<p>Content is specific written copy, audio, video or some other format.  </p>
+
+		<h4>Content Policy</h4>
+
+		<p><img src="images/symbols/content-policy.png" alt="Content Policy" title="" /></p>
+
+		<p>To indicate a general policy for content within the modal response, without specifying the exact content, a Content Policy element may be used.  It could be labeled "related products" or “customer testimonials.”</p>
+
+		<h4>Functionality</h4>
+
+		<p><img src="images/symbols/functionality.png" alt="Functionality" title="" /></p>
+
+		<p>Functionality indicates some interactive feature set of the application that is activated in this modal response.</p>
+
+		<h4>Rule</h4>
+
+		<p><img src="images/symbols/rule.png" alt="Rule" title="" /></p>
+
+		<p>A rule is a business rule that is active within the modal response.  This frequently is used in conjunction with a Functionality element, modifying its behavior.</p>
+
+		<h4>Style</h4>
+
+		<p><img src="images/symbols/style.png" alt="Style" title="" /></p>
+
+		<p>Style specifies the general timber and color of the modal response.  It will be reflected in other aspects, such as content and the design of the user interface.</p>
+
+		<h2>Switch Migrations</h2>
+
+		<p><img src="images/symbols/switch-migration.png" alt="Switch Migration" title="" /></p>
+
+		<p>Instead of a modal response consisting of a mode inventory, a Context Rule may trigger a Switch Migration.  A switch migration indicates that control for the user is being passed to another Switch.  On firing a Switch Migration, the new Switch will immediately evaluate the user context starting at the top of <em>its</em> context stack.</p>
+
+		<h1>User Interfaces</h1>
+
+		<p>A User Interface may be associated with a modal response.  In the case of visual user interfaces, this could be a wireframe or mock-up: in the case of audio user interfaces this might be a card with an example of spoken word content.</p>
+
+		<p>The point of User Interfaces in CAVE is to show how they are associated with the modal response of an application.</p>
+		
+		<hr/>
+
+		<blockquote>
+		  <h2>Example: Bike App Modes - Initial Switch</h2>
+
+		<p><img src="images/examples/Bike-App-Modes-Initial.png" alt="Bike App Modes Initial Switch" title="" /></p>
+
+		<p>The Bike App starts operating on its Initial Switch.  At this Switch's highest priority, it is looking for the user to be associated with two Environments: Riding (meaning they are in transit) and Rain Imminent (meaning it's going to rain before they reach their destination).</p>
+
+		<p>If this rule is satisfied the Bike app will display the rain imminent warning content, calculate the route to the nearest shelter, and migrate to the Rain Imminent Switch.</p>
+
+		<p>Otherwise, the default behavior is to display weather information to the rider.</p>
+
+		<h2>Example: Bike App Modes - Rain Imminent Switch</h2>
+
+		<p><img src="images/examples/Bike-App-Modes-Rain-Imminent.png" alt="Bike App Modes Rain Imminent Switch" title="" /></p>
+
+		<p>The highest priority on the Rain Imminent Switch to look for a user with the En Route Environment, the Rain Imminent Environment, who is also carrying a Ride for Shelter Goal. In this case the Bike App will display a Countdown to Rain Content Policy, the Rain Imminent warning, provide directions to the shelter, and carry an urgent style (red warnings, terse language etc.).</p>
+
+		<p>If the Environments are present, but the user is instead carrying a Goal of Ride for Work or Ride for Home, the app will migrate to the Beat the Weather Switch.</p>
+
+		<p>If neither rule applies, the default behavior for this Switch will be to restore control to the Initial Switch.</p>
+
+		<h2>Example: Bike App Modes - Beat the Weather Switch</h2>
+
+		<p><img src="images/examples/Bike-App-Modes-Beat-the-Weather.png" alt="Bike App Modes Beat the Weather Switch" title="" /></p>
+
+		<p>In the Beat the Weather Switch, the highest priority rule is looking for the En Route and Rain Imminent Environments, and either a Ride for Home or Ride for Work Goal.  If this is matched, the app will respond with three Content Policies: some exciting music for the rider, a countdown to rain indicator and a countdown to destination indicator.</p>
+
+		<p>The second rule is in case the rider changes their mind and decides to find a shelter after all.  In this case the two Environments are the same, but the Goal is now Ride for Shelter.  This will cause the app to migrate back to the Rain Imminent Switch.</p>
+
+		<p>The default behavior, if neither rule fires, is to return control to the Initial Switch.</p>
+		</blockquote>
+	</div>
+</body>
+</html>
